@@ -24,9 +24,7 @@ function post_message(senderName, message)
 
 function collect_message()
 {
-	const userInput = document.getElementById("userText");
-
-	text = userInput.value;
+	const text = document.getElementById("#userText").value;
 
 	if(text == "")
 	{
@@ -37,15 +35,10 @@ function collect_message()
 		post_message("vous", text);
 	}
 
-	fetch('/ask',
-	{
-		method: "POST",
-		body: text,
-		headers:
-		{
-			'Content-Type': 'text/plain'
-		}
-	}).then(response => {
+	fetch('/ask', {
+        method: "POST",
+        body: new FormData(document.querySelector("form"))
+    }).then(response => {
 		if (response.ok)
 		{
 			response.text()

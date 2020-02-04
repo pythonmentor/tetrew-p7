@@ -2,26 +2,27 @@
 
 import wikipedia
 
-class GrandPy():
-	def __init__(self):
-		pass
 
-	def collect_informations(self, keyword):
-	
-		try:
-			wikipedia.set_lang("fr")
+class GrandPy:
+    def __init__(self):
+        pass
 
-			text = wikipedia.summary(keyword, sentences=1)
-		
-		except:
-			return False
+    def collect_informations(self, keyword):
 
-		return text
+        try:
+            wikipedia.set_lang("fr")
 
+            text = wikipedia.summary(keyword, sentences=1)
 
-	def collect_adress(self, keyword):
-		pass
+        # -tc- ne jamais faire de except sans exception!
+        except:
+            return False
 
+        return text
 
-	def collect_map(self, keyword):
-		pass
+    def collect_adress(self, keyword):
+        pass
+
+    def collect_map(self, keyword):
+        pass
+

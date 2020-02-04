@@ -2,12 +2,15 @@
 
 class Parser:
 
+	# -tc- je n'utiliserais personnellement pas la méthode des stop words comme
+	# -tc- unique méthode dans ce projet. Elle n'est vraiment pas efficace. 
 	def __init__(self):
 		self.salutation = ['bonjour', 'grandpy', 'salut', 'hey', 'coucou', 'papy', 'grand', 'père']
 		self.question = ['peux-tu', 'connais', 'sais', 'quoi', 'dire', 'sujet', 'ou', 'oû']
 		self.keywords = ['rue', 'adresse', "l'adresse", 'endroit', "lieu", "place", "avenue", "coordonnées"]
 		self.ponctuation = ["?", "." , "!", ","]
 		
+		# -tc- Pas PEP8
 		self.stopWord = ["a","abord","absolument","afin","ah","ai","aie","ailleurs","ainsi","ait","allaient","allo",
 	"allons","allô","alors","anterieur","anterieure","anterieures","apres","après","as","assez","attendu",
 	"au","aucun","aucune","aujourd","aujourd'hui","aupres","auquel","aura","auraient","aurait","auront",
@@ -71,6 +74,7 @@ class Parser:
 		wordList = sentence.split()
 
 		#remove stop word from word_list
+		# -tc- ce genre de construction est douteuse
 		for word in wordList:
 			if word not in self.stopWord:
 				if word not in self.salutation:
